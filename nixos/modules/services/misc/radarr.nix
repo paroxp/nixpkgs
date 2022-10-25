@@ -42,6 +42,15 @@ in
         default = "radarr";
         description = lib.mdDoc "Group under which Radarr runs.";
       };
+
+      package = mkOption {
+        type = types.package;
+        default = pkgs.radarr;
+        defaultText = literalExpression "pkgs.radarr";
+        description = ''
+          Radarr package to use.
+        '';
+      };
     };
   };
 
